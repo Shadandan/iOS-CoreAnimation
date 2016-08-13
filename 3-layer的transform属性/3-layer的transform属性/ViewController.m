@@ -34,7 +34,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     //旋转
-    self.layer.transform=CATransform3DRotate(self.layer.transform, M_PI_4, 0, 0, 1);//x,y,z,z=1表示绕z轴旋转,每次转90度,z轴是垂直于屏幕面的轴，指向脸
+    self.layer.transform=CATransform3DRotate(self.layer.transform, M_PI_4, 0, 0, 1);//x,y,z,z=1表示绕z轴旋转,每次转45度,z轴是垂直于屏幕面的轴，指向脸
     //self.layer.transform=CATransform3DMakeRotation(M_PI_4, 0, 0, 1);//makeRatation表示转到某个角度
     //缩放
     self.layer.transform=CATransform3DScale(self.layer.transform, 0.5, 1, 1);//x=0.5,y=1,z=1表示x轴缩小，y、z不变
