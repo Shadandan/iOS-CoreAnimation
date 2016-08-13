@@ -30,16 +30,16 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CAAnimationGroup *group=[[CAAnimationGroup alloc]init];
     
-    //创建一个关键帧动画
+    //创建一个关键帧动画实现公转
     CAKeyframeAnimation *keyAnim=[[CAKeyframeAnimation alloc]init];
     keyAnim.keyPath=@"position";
     UIBezierPath *path1=[UIBezierPath bezierPathWithArcCenter:CGPointMake(100, 100) radius:50 startAngle:0 endAngle:2*M_PI clockwise:YES];
     keyAnim.path=path1.CGPath;
     
-    //创建一个基本动画
+    //创建一个基本动画，实现自转
     CABasicAnimation *basicAnim=[[CABasicAnimation alloc]init];
     basicAnim.keyPath=@"transform.rotation";
-    basicAnim.byValue=@(2*M_PI);
+    basicAnim.byValue=@(2*M_PI*3);
     
     group.animations=@[keyAnim,basicAnim];
     group.duration=2;
